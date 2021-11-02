@@ -48,16 +48,17 @@ initial_cover = Cover(num_intervals=5, percent_overlap=0.2)
 
 # Now run xmean adaptive cover
 adaptive_cover = xmeans_adaptive_cover(X, lens=lens,
-																			 clusterer=DBSCAN(eps=2), # Sklearn Cluster obj 
-																			 iterations=100, # Maximum num of iterations
-																			 max_intervals=100, # Max num of intervals
-																			 BIC=True, # False uses AIC
-																			 # Percentage change to determine convergence
-																			 delta=0.01,
-																			 # One of BFS, DFS, or Randomized
-																			 method='BFS')
+					clusterer=DBSCAN(eps=2), # Sklearn Cluster obj 
+					iterations=100, # Maximum num of iterations
+					max_intervals=100, # Max num of intervals
+					BIC=True, # False uses AIC
+					# Percentage change to determine convergence
+					delta=0.01,
+					# One of BFS, DFS, or Randomized
+					method='BFS')
+	
 final_graph = generate_mapper_graph(X, lens, cover=adaptive_cover, clusterer=DBSCAN(eps=2),
-																	  refit_cover=False) # VERY IMPORTANT - See note
+					refit_cover=False) # VERY IMPORTANT - See note
 ```
 
 Here are some important notes:
