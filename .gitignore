@@ -1,0 +1,26 @@
+# Python Files
+**/__pycache__
+
+# Mac files
+*.DS_Store
+
+# Vis files
+*.html
+*.png
+
+# Data files
+*.txt
+*.zip
+*.cdb
+
+# ipynb
+**/.ipynb_checkpoints/*
+
+# pip
+*.egg-info
+
+# VS Code
+*.vscode
+
+# Intellj
+*.idea
